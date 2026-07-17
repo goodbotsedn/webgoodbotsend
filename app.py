@@ -1,31 +1,44 @@
 import streamlit as st
-import pandas as pd
-import zipfile
-import io
-import os
+import base64
 
-# --- DISEÑO ---
-st.set_page_config(page_title="WebGoodBot", page_icon="🤖", layout="centered")
+# --- CONFIGURACIÓN DE PÁGINA ---
+st.set_page_config(page_title="GoodBotSend | Descarga", page_icon="🤖", layout="centered")
+
+# --- ESTILOS CSS ---
 st.markdown("""
     <style>
     .stApp { background-color: #0e1117; color: white; }
-    .stButton>button { background-color: #00ff41; color: black; font-weight: bold; }
-    h1 { color: #00ff41; text-align: center; }
+    .btn-descarga>button { 
+        background-color: #00ff41 !important; color: black !important; 
+        font-weight: bold !important; width: 100% !important; height: 50px !important;
+    }
+    .titulo { color: #00ff41; text-align: center; }
     </style>
     """, unsafe_allow_html=True)
 
-st.title("🤖 WebGoodBot | Centro de control")
-st.markdown("<p style='text-align: center; color: #888;'>Plataforma de despliegue para robots.</p>", unsafe_allow_html=True)
-st.markdown("---")
+# --- CABECERA Y LOGO ---
+st.markdown("<h1 class='titulo'>GOOD BOT SEND</h1>", unsafe_allow_html=True)
 
-# --- ELEMENTOS QUE FALTABAN ---
-mensaje_usuario = st.text_area("✍️ Escribe el mensaje:")
-archivo_excel = st.file_uploader("📊 Sube tu Excel", type=["xlsx"])
-archivo_imagen = st.file_uploader("🖼️ Sube tu imagen", type=["jpg", "jpeg", "png"])
+# Aquí debes asegurarte de tener la imagen en tu GitHub o usar una URL pública
+# st.image("https://tu-url-de-la-imagen.com/goodbotsend.jpg", use_column_width=True)
+st.image("https://i.imgur.com/TuCodigoDeImagen.jpg", use_column_width=True) # Reemplaza esto con tu URL de imagen real
 
-if st.button("🚀 Generar Carpeta del Robot"):
-    if mensaje_usuario and archivo_excel:
-        st.success("✅ ¡Todo listo! Procesando...")
-        # AQUÍ IRÍA LA LÓGICA DE TU ZIP QUE YA TENÍAS
-    else:
-        st.error("⚠️ Por favor completa los campos.")
+# --- SEGURIDAD ---
+clave_correcta = "TU_CLAVE_AQUI" # CAMBIA ESTO POR TU CLAVE SECRETA
+clave_usuario = st.text_input("🔑 Ingresa tu clave de acceso para descargar:", type="password")
+
+# --- LÓGICA DE DESCARGA ---
+if clave_usuario == clave_correcta:
+    st.success("✅ ¡Clave correcta! Ya puedes descargar.")
+    
+    # Aquí irá la ruta del archivo que subas a tu GitHub
+    with open("GoodBotSend.zip", "rb") as file:
+        btn = st.download_button(
+            label="🚀 DESCARGAR GOODBOTSEND AHORA",
+            data=file,
+            file_name="GoodBotSend.zip",
+            mime="application/zip",
+            key="btn-descarga"
+        )
+elif clave_usuario != "":
+    st.error("❌ Clave incorrecta. Contacta con el administrador.")
