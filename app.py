@@ -8,6 +8,14 @@ st.set_page_config(page_title="Descarga", layout="centered")
 
 st.title("GOOD BOT SEND")
 
+# --- CORRECCIÓN DE IMAGEN ---
+# Verificamos si existe la imagen en la ruta que usamos anteriormente
+ruta_imagen = "static/imagenes/promocion.jpg"
+if os.path.exists(ruta_imagen):
+    st.image(ruta_imagen, use_container_width=True)
+else:
+    st.warning(f"La imagen no se encontró en: {ruta_imagen}. Verifica si está ahí o si el nombre es diferente.")
+
 # Lógica de creación de ZIP
 def crear_zip():
     zip_buffer = io.BytesIO()
@@ -25,7 +33,7 @@ def crear_zip():
 # Entrada de clave
 clave = st.text_input("Ingresa la clave:", type="password")
 
-# Validación estricta
+# Validación
 if clave == "Modulo10":
     st.success("Acceso concedido")
     st.download_button(
