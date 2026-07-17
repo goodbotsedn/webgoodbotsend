@@ -1,2 +1,3 @@
-gunicorn
-flask
+streamlit
+pandas
+openpyxl
