@@ -4,29 +4,28 @@ import zipfile
 import io
 import os
 
-# --- DISEÑO TECNOLÓGICO Y AMIGABLE ---
-st.set_page_config(
-    page_title="WebGoodBot | Automatización",
-    page_icon="🤖",
-    layout="centered",
-    initial_sidebar_state="collapsed"
-)
-
-# Estilo CSS para un look "Cyber/Tech"
+# --- DISEÑO ---
+st.set_page_config(page_title="WebGoodBot", page_icon="🤖", layout="centered")
 st.markdown("""
     <style>
-    .main { background-color: #0e1117; color: #ffffff; }
-    .stButton>button { 
-        width: 100%; border-radius: 5px; height: 3em; 
-        background-color: #00ff41; color: #000000; font-weight: bold; border: none;
-    }
-    .stButton>button:hover { background-color: #008f11; color: white; }
+    .stApp { background-color: #0e1117; color: white; }
+    .stButton>button { background-color: #00ff41; color: black; font-weight: bold; }
     h1 { color: #00ff41; text-align: center; }
     </style>
     """, unsafe_allow_html=True)
 
-st.title("🤖 WebGoodBot | Control Central")
-st.markdown("<p style='text-align: center; color: #888;'>Plataforma de despliegue para robots de mensajería masiva.</p>", unsafe_allow_html=True)
+st.title("🤖 WebGoodBot | Centro de control")
+st.markdown("<p style='text-align: center; color: #888;'>Plataforma de despliegue para robots.</p>", unsafe_allow_html=True)
 st.markdown("---")
 
-# ... (Aquí continúa todo tu código actual igual que antes) ...
+# --- ELEMENTOS QUE FALTABAN ---
+mensaje_usuario = st.text_area("✍️ Escribe el mensaje:")
+archivo_excel = st.file_uploader("📊 Sube tu Excel", type=["xlsx"])
+archivo_imagen = st.file_uploader("🖼️ Sube tu imagen", type=["jpg", "jpeg", "png"])
+
+if st.button("🚀 Generar Carpeta del Robot"):
+    if mensaje_usuario and archivo_excel:
+        st.success("✅ ¡Todo listo! Procesando...")
+        # AQUÍ IRÍA LA LÓGICA DE TU ZIP QUE YA TENÍAS
+    else:
+        st.error("⚠️ Por favor completa los campos.")
