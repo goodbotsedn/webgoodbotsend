@@ -3,26 +3,12 @@ import zipfile
 import io
 import os
 
-# --- CONFIGURACIÓN ---
-st.set_page_config(page_title="GoodBotSend | Descarga", page_icon="🤖", layout="centered")
+# Configuración básica
+st.set_page_config(page_title="Descarga", layout="centered")
 
-# --- ESTILOS CSS ---
-st.markdown("""
-    <style>
-    .stApp { background-color: #0e1117; color: white; }
-    .btn-descarga>button { background-color: #00ff41 !important; color: black !important; font-weight: bold !important; width: 100% !important; height: 50px !important; }
-    .titulo { color: #00ff41; text-align: center; font-size: 2.5em; margin-bottom: 20px; }
-    .info-text { text-align: center; color: #cccccc; margin-bottom: 20px; }
-    </style>
-    """, unsafe_allow_html=True)
+st.title("GOOD BOT SEND")
 
-st.markdown("<h1 class='titulo'>GOOD BOT SEND</h1>", unsafe_allow_html=True)
-st.markdown("<p class='info-text'>Sistema profesional de mensajería inteligente.</p>", unsafe_allow_html=True)
-
-# Imagen (usando la ruta que ya tienes)
-st.image("static/imagenes/promocion.jpg", use_container_width=True)
-
-# --- LÓGICA DE COMPRESIÓN ---
+# Lógica de creación de ZIP
 def crear_zip():
     zip_buffer = io.BytesIO()
     with zipfile.ZipFile(zip_buffer, "w") as zf:
@@ -36,18 +22,17 @@ def crear_zip():
                 zf.write(archivo)
     return zip_buffer.getvalue()
 
-# --- SEGURIDAD ---
-st.markdown("<hr>", unsafe_allow_html=True)
-clave_usuario = st.text_input("🔑 Ingresa tu clave de acceso:", type="password")
+# Entrada de clave
+clave = st.text_input("Ingresa la clave:", type="password")
 
-# --- LÓGICA DE DESCARGA ---
-if clave_usuario == "1234": # CAMBIA ESTO POR LA CLAVE QUE QUIERAS
-    st.success("✅ Acceso autorizado. Iniciando descarga...")
+# Validación estricta
+if clave == "Modulo10":
+    st.success("Acceso concedido")
     st.download_button(
-        label="🚀 DESCARGAR ARCHIVOS",
+        label="DESCARGAR ARCHIVOS",
         data=crear_zip(),
         file_name="GoodBotSend.zip",
         mime="application/zip"
     )
-elif clave_usuario != "":
-    st.error("❌ Clave incorrecta.")
+elif clave != "":
+    st.error("Clave incorrecta")
