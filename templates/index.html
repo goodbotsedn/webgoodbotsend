@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GODBOTSEND | Plataforma Corporativa de Automatización & Leads</title>
+    <title>Goodbotsend | Plataforma Corporativa de Automatización & Leads</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -35,7 +35,7 @@
             overflow-x: hidden;
         }
 
-        /* CANVAS MATRIX ANIMADO - DETRÁS DE TODO */
+        /* CANVAS MATRIX ANIMADO - FONDO */
         #matrix-canvas {
             position: fixed;
             top: 0;
@@ -47,7 +47,7 @@
             pointer-events: none;
         }
 
-        /* CONTENEDOR PRINCIPAL - ENCIMA DEL CANVAS */
+        /* CONTENEDOR PRINCIPAL */
         .content-wrapper {
             position: relative;
             z-index: 2;
@@ -124,7 +124,7 @@
             font-size: 1rem;
         }
 
-        /* BLOQUE 1: CARACTERÍSTICAS GODBOTSEND */
+        /* BLOQUE 1: CARACTERÍSTICAS GOODBOTSEND */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -165,15 +165,40 @@
             line-height: 1.5;
         }
 
-        /* MÓDULO DE DESCARGA CON CONTRASEÑA */
+        /* SECCIÓN DE DESCARGA CON IMAGEN AL LADO */
+        .download-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 1050px;
+        }
+
+        .banner-container {
+            text-align: center;
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(12px);
+        }
+
+        .banner-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            display: block;
+            object-fit: cover;
+        }
+
         .download-box {
             background: var(--card-inner);
             backdrop-filter: blur(16px);
             border: 2px solid var(--primary);
             border-radius: 16px;
             padding: 2.5rem 2rem;
-            max-width: 540px;
-            margin: 0 auto;
             text-align: center;
             box-shadow: 0 8px 30px rgba(0, 255, 136, 0.15);
         }
@@ -296,381 +321,3 @@
             gap: 12px;
             margin-bottom: 1rem;
         }
-
-        .pkg-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            background: rgba(255,255,255,0.05);
-        }
-
-        .pkg-title h3 {
-            font-size: 1.1rem;
-            color: #ffffff;
-            text-transform: uppercase;
-        }
-
-        .pkg-leads {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: #ffffff;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .pkg-leads span {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 400;
-            display: block;
-        }
-
-        .pkg-pricing {
-            background: rgba(5, 8, 17, 0.8);
-            border-radius: 10px;
-            padding: 0.9rem;
-            text-align: center;
-            margin-bottom: 1.2rem;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .pkg-old-price {
-            text-decoration: line-through;
-            color: var(--danger);
-            font-size: 0.9rem;
-        }
-
-        .pkg-new-price {
-            font-size: 2rem;
-            font-weight: 900;
-            color: var(--primary);
-        }
-
-        .btn-pkg {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            padding: 0.85rem;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 800;
-            background: var(--whatsapp);
-            color: #ffffff;
-            text-transform: uppercase;
-            font-size: 0.88rem;
-            transition: opacity 0.3s;
-        }
-
-        .btn-pkg:hover {
-            opacity: 0.9;
-        }
-
-        /* FOOTER / DATOS EMPRESA */
-        footer {
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(12px);
-            border-top: 1px solid rgba(0, 255, 136, 0.2);
-            padding: 3rem 1.5rem 2rem;
-            color: var(--text-muted);
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1150px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-col h4 {
-            color: #ffffff;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer-col p {
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-col i {
-            color: var(--primary);
-            width: 20px;
-        }
-
-        .footer-bottom {
-            max-width: 1150px;
-            margin: 2rem auto 0;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            font-size: 0.85rem;
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 25px;
-            right: 25px;
-            background: var(--whatsapp);
-            color: #FFF;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- CANVAS PARA EL EFECTO MATRIX ANIMADO EN EL FONDO -->
-    <canvas id="matrix-canvas"></canvas>
-
-    <div class="content-wrapper">
-        
-        <!-- HEADER CORPORATIVO -->
-        <header>
-            <div class="brand-badge"><i class="fa-solid fa-shield-halved"></i> Plataforma Oficial B2B / B2C</div>
-            <div class="logo-title">GODBOTSEND</div>
-            <p>Ecosistema de Automatización de Comunicaciones Corporativas & Prospección Comercial de Alto Impacto.</p>
-        </header>
-
-        <div class="container">
-
-            <!-- BLOQUE 1: GOODBOTSEND Y MÓDULO DE DESCARGA -->
-            <section class="block-section">
-                <div class="section-header">
-                    <h2>Plataforma de Automatización GOODBOTSEND</h2>
-                    <p>Optimiza la comunicación comercial de tu empresa con flujos automatizados y ejecuciones masivas.</p>
-                </div>
-
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fa-solid fa-paper-plane"></i></div>
-                        <h3>Envíos Masivos Estables</h3>
-                        <p>Difusión masiva de catálogos, imágenes, PDF y textos con alta tasa de entregabilidad.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fa-solid fa-robot"></i></div>
-                        <h3>Flujos Automatizados</h3>
-                        <p>Atención oportuna a clientes potenciales reduciendo tiempos de respuesta al mínimo.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fa-solid fa-file-excel"></i></div>
-                        <h3>Integración Excel</h3>
-                        <p>Carga directa y procesamiento limpio de listas de prospectos en formato .XLSX y .CSV.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
-                        <h3>Módulo Seguro</h3>
-                        <p>Descarga protegida de paquetes ejecutables exclusivamente para clientes autorizados.</p>
-                    </div>
-                </div>
-
-                <!-- ACCESO A DESCARGA MÓDULO -->
-                <div class="download-box">
-                    <h3><i class="fa-solid fa-key"></i> Descarga de Paquetes Ejecutables</h3>
-                    <p>Ingresa tu clave de acceso autorizada para descargar el paquete ejecutable del software.</p>
-                    
-                    {% if error %}
-                        <div class="error-msg"><i class="fa-solid fa-triangle-exclamation"></i> {{ error }}</div>
-                    {% endif %}
-
-                    <form action="/" method="POST">
-                        <div class="input-group">
-                            <input type="password" name="clave" placeholder="Ingresa tu clave de acceso autorizada..." required autocomplete="off">
-                        </div>
-                        <button type="submit" class="btn-download">
-                            <i class="fa-solid fa-download"></i> Validar & Descargar Paquete
-                        </button>
-                    </form>
-                </div>
-            </section>
-
-            <!-- BLOQUE 2: PLANES Y PROSPECCIÓN COMERCIAL -->
-            <section class="block-section">
-                <div class="section-header">
-                    <h2>Leads de Clientes Potenciales</h2>
-                    <p>Segmentación comercial idónea para impulsar tus cierres de ventas a nivel nacional.</p>
-                </div>
-
-                <div class="coverage-bar">
-                    <i class="fa-solid fa-earth-americas"></i> Cobertura Comercial Disponible: Leads Calificados a Nivel Nacional (Quito, Guayaquil, Provincias)
-                </div>
-
-                <div class="packages-grid">
-                    
-                    <!-- PAQUETE EMPRENDEDOR -->
-                    <div class="pkg-card blue">
-                        <div>
-                            <div class="pkg-header">
-                                <div class="pkg-icon" style="color:#00d2ff"><i class="fa-solid fa-briefcase"></i></div>
-                                <div class="pkg-title">
-                                    <h3>Paquete Emprendedor</h3>
-                                </div>
-                            </div>
-                            <div class="pkg-leads">
-                                4.500 <span>LEADS POTENCIALES</span>
-                            </div>
-                            <div class="pkg-pricing">
-                                <div class="pkg-old-price">Antes: $40.00</div>
-                                <div class="pkg-new-price">$19.99</div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/593963218544?text=Hola%20Mijail,%20deseo%20comprar%20el%20Paquete%20Emprendedor%20(4.500%20Leads%20x%20$19.99)" class="btn-pkg" target="_blank">
-                            <i class="fa-brands fa-whatsapp"></i> Adquirir Paquete
-                        </a>
-                    </div>
-
-                    <!-- PAQUETE CIERRE EXPLOSIVO -->
-                    <div class="pkg-card teal">
-                        <div>
-                            <div class="pkg-header">
-                                <div class="pkg-icon" style="color:#00ffc8"><i class="fa-solid fa-bolt"></i></div>
-                                <div class="pkg-title">
-                                    <h3>Cierre Explosivo</h3>
-                                </div>
-                            </div>
-                            <div class="pkg-leads">
-                                15.000 <span>LEADS POTENCIALES</span>
-                            </div>
-                            <div class="pkg-pricing">
-                                <div class="pkg-old-price">Antes: $60.00</div>
-                                <div class="pkg-new-price">$34.99</div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/593963218544?text=Hola%20Mijail,%20deseo%20comprar%20el%20Paquete%20Cierre%20Explosivo%20(15.000%20Leads%20x%20$34.99)" class="btn-pkg" target="_blank">
-                            <i class="fa-brands fa-whatsapp"></i> Adquirir Paquete
-                        </a>
-                    </div>
-
-                    <!-- PAQUETE CORPORATIVO -->
-                    <div class="pkg-card purple">
-                        <div>
-                            <div class="pkg-header">
-                                <div class="pkg-icon" style="color:#9d4edd"><i class="fa-solid fa-city"></i></div>
-                                <div class="pkg-title">
-                                    <h3>Paquete Corporativo</h3>
-                                </div>
-                            </div>
-                            <div class="pkg-leads">
-                                50.000 <span>LEADS POTENCIALES</span>
-                            </div>
-                            <div class="pkg-pricing">
-                                <div class="pkg-old-price">Antes: $120.00</div>
-                                <div class="pkg-new-price">$49.99</div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/593963218544?text=Hola%20Mijail,%20deseo%20comprar%20el%20Paquete%20Corporativo%20(50.000%20Leads%20x%20$49.99)" class="btn-pkg" target="_blank">
-                            <i class="fa-brands fa-whatsapp"></i> Adquirir Paquete
-                        </a>
-                    </div>
-
-                    <!-- LOTE COMPLETO -->
-                    <div class="pkg-card green">
-                        <div>
-                            <div class="pkg-header">
-                                <div class="pkg-icon" style="color:#00ff88"><i class="fa-solid fa-globe"></i></div>
-                                <div class="pkg-title">
-                                    <h3>Lote Completo</h3>
-                                </div>
-                            </div>
-                            <div class="pkg-leads">
-                                100.000 <span>HASTA 100K LEADS</span>
-                            </div>
-                            <div class="pkg-pricing">
-                                <div class="pkg-old-price">Antes: $180.00</div>
-                                <div class="pkg-new-price">$79.99</div>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/593963218544?text=Hola%20Mijail,%20deseo%20comprar%20el%20Lote%20Completo%20(100.000%20Leads%20x%20$79.99)" class="btn-pkg" target="_blank">
-                            <i class="fa-brands fa-whatsapp"></i> Adquirir Paquete
-                        </a>
-                    </div>
-
-                </div>
-            </section>
-
-        </div>
-
-        <!-- PIE DE PÁGINA Y DATOS FISCALES -->
-        <footer>
-            <div class="footer-content">
-                <div class="footer-col">
-                    <h4>Identificación Fiscal & Empresa</h4>
-                    <p><i class="fa-solid fa-user-tie"></i> <strong>Titular:</strong> Mijail Jimenez Herrera</p>
-                    <p><i class="fa-solid fa-id-card"></i> <strong>RUC:</strong> 1722975453001</p>
-                    <p><i class="fa-solid fa-building"></i> <strong>Actividad:</strong> Automatización de Software & Servicios Comercial B2B/B2C</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Atención Corporativa & Contacto</h4>
-                    <p><i class="fa-solid fa-phone"></i> <strong>WhatsApp Directo:</strong> 0963218544</p>
-                    <p><i class="fa-solid fa-earth-americas"></i> <strong>Cobertura:</strong> Ecuador (Nacional)</p>
-                    <p><i class="fa-solid fa-clock"></i> <strong>Procesamiento:</strong> Entrega inmediata tras confirmación</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 GODBOTSEND | Propietario: Mijail Jimenez Herrera - RUC 1722975453001. Todos los derechos reservados.</p>
-            </div>
-        </footer>
-
-        <!-- BOTÓN WHATSAPP FLOTANTE -->
-        <a href="https://wa.me/593963218544?text=Hola%20Mijail,%20requiero%20asistencia%20con%20GODBOTSEND" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-    </div>
-
-    <!-- SCRIPT DE MATRIX ANIMADO EN CANVAS -->
-    <script>
-        const canvas = document.getElementById('matrix-canvas');
-        const ctx = canvas.getContext('2d');
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&*';
-        const fontSize = 14;
-        let columns = Math.floor(canvas.width / fontSize);
-        let drops = Array(columns).fill(1);
-
-        function drawMatrix() {
-            // Fondo transparente con desvanecido para evitar el cuadro negro
-            ctx.fillStyle = 'rgba(5, 8, 17, 0.15)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.fillStyle = '#00ff88';
-            ctx.font = fontSize + 'px monospace';
-
-            for (let i = 0; i < drops.length; i++) {
-                const text = chars.charAt(Math.floor(Math.random() * chars.length));
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-        }
-
-        setInterval(drawMatrix, 45);
-    </script>
-</body>
-</html>
