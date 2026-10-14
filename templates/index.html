@@ -19,9 +19,10 @@
             min-height: 100vh;
             position: relative;
             padding-bottom: 50px;
+            overflow-x: hidden;
         }
 
-        /* CANVAS MATRIX ANIMADO (TRANSPARENTE Y DETRÁS DEL CONTENIDO) */
+        /* FONDO MATRIX ANIMADO DETRÁS DEL CONTENIDO */
         #matrix-canvas {
             position: fixed;
             top: 0;
@@ -30,7 +31,7 @@
             height: 100vh;
             z-index: 1;
             pointer-events: none;
-            opacity: 0.28;
+            opacity: 0.35;
         }
 
         .main-wrapper {
@@ -39,9 +40,9 @@
         }
 
         header {
-            background: rgba(15, 23, 42, 0.95);
+            background: rgba(15, 23, 42, 0.92);
             backdrop-filter: blur(8px);
-            padding: 2.5rem 1.5rem 2rem;
+            padding: 1.8rem 1.5rem 1.5rem;
             text-align: center;
             border-bottom: 2px solid #00ff88;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -52,17 +53,17 @@
             background: rgba(0, 255, 136, 0.12);
             border: 1px solid #00ff88;
             color: #00ff88;
-            padding: 0.4rem 1.2rem;
+            padding: 0.3rem 1rem;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
         }
 
         .logo-title {
-            font-size: 3rem;
+            font-size: 2.6rem;
             font-weight: 900;
             color: #ffffff;
             letter-spacing: 3px;
@@ -71,9 +72,9 @@
         }
 
         header p {
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #94a3b8;
-            margin-top: 0.6rem;
+            margin-top: 0.4rem;
             max-width: 750px;
             margin-left: auto;
             margin-right: auto;
@@ -86,104 +87,106 @@
         }
 
         .block-section {
-            padding: 3rem 0 2rem;
+            padding: 2rem 0 1.5rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.8rem;
         }
 
         .section-header h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: #ffffff;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
         }
 
         .section-header p {
             color: #94a3b8;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 2rem;
         }
 
         .feature-card {
             background: rgba(17, 24, 39, 0.92);
             backdrop-filter: blur(6px);
-            padding: 1.8rem 1.5rem;
-            border-radius: 14px;
+            padding: 1.4rem 1.2rem;
+            border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 4px 20px rgba(0,0,0,0.4);
         }
 
         .feature-icon {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #00ff88;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
         }
 
         .feature-card h3 {
             color: #ffffff;
-            margin-bottom: 0.5rem;
-            font-size: 1.15rem;
+            margin-bottom: 0.4rem;
+            font-size: 1.05rem;
         }
 
         .feature-card p {
             color: #94a3b8;
-            font-size: 0.9rem;
-            line-height: 1.5;
+            font-size: 0.85rem;
+            line-height: 1.4;
         }
 
+        /* MÓDULO DE DESCARGA CON AFICHE INTEGRADO */
         .download-wrapper {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
             align-items: center;
             margin: 0 auto;
-            max-width: 1050px;
+            max-width: 1000px;
         }
 
         .banner-container {
             text-align: center;
             background: rgba(17, 24, 39, 0.92);
-            border-radius: 16px;
-            padding: 1rem;
+            border-radius: 14px;
+            padding: 0.8rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
         }
 
         .banner-container img {
             width: 100%;
-            height: auto;
-            border-radius: 12px;
+            max-height: 380px;
+            border-radius: 10px;
             display: block;
-            object-fit: cover;
+            object-fit: contain;
+            margin: 0 auto;
         }
 
         .download-box {
             background: rgba(30, 41, 59, 0.95);
             border: 2px solid #00ff88;
-            border-radius: 16px;
-            padding: 2.2rem 1.8rem;
+            border-radius: 14px;
+            padding: 2rem 1.5rem;
             text-align: center;
             box-shadow: 0 8px 30px rgba(0,0,0,0.5);
         }
 
         .download-box h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: #ffffff;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .download-box h3 i {
@@ -192,21 +195,21 @@
 
         .download-box p {
             color: #94a3b8;
-            font-size: 0.92rem;
-            margin-bottom: 1.5rem;
+            font-size: 0.88rem;
+            margin-bottom: 1.2rem;
         }
 
         .input-group input {
             width: 100%;
-            padding: 0.9rem 1.2rem;
-            border-radius: 10px;
+            padding: 0.85rem 1rem;
+            border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.15);
             background: #0f172a;
             color: #ffffff;
-            font-size: 1rem;
+            font-size: 0.95rem;
             text-align: center;
             outline: none;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         .input-group input:focus {
@@ -215,55 +218,55 @@
 
         .btn-download {
             width: 100%;
-            padding: 0.9rem;
-            border-radius: 10px;
+            padding: 0.85rem;
+            border-radius: 8px;
             border: none;
             background: #00ff88;
             color: #050811;
             font-weight: 800;
-            font-size: 1rem;
+            font-size: 0.95rem;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .error-msg {
             background: rgba(255, 71, 87, 0.2);
             border: 1px solid #ff4757;
             color: #ff4757;
-            padding: 0.8rem;
+            padding: 0.7rem;
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 1rem;
         }
 
         .coverage-bar {
             background: rgba(0, 210, 255, 0.1);
             border: 1px solid #00d2ff;
-            border-radius: 12px;
-            padding: 1rem;
+            border-radius: 10px;
+            padding: 0.8rem;
             text-align: center;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             color: #00d2ff;
             font-weight: 700;
-            font-size: 0.98rem;
+            font-size: 0.92rem;
         }
 
         .packages-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
         }
 
         .pkg-card {
             background: rgba(17, 24, 39, 0.92);
             backdrop-filter: blur(6px);
-            border-radius: 16px;
-            padding: 1.8rem 1.4rem;
+            border-radius: 14px;
+            padding: 1.5rem 1.2rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
@@ -278,37 +281,37 @@
         .pkg-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 1rem;
+            gap: 10px;
+            margin-bottom: 0.8rem;
         }
 
         .pkg-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             background: rgba(255,255,255,0.05);
         }
 
         .pkg-title h3 {
-            font-size: 1.05rem;
+            font-size: 0.98rem;
             color: #ffffff;
             text-transform: uppercase;
         }
 
         .pkg-leads {
-            font-size: 1.7rem;
+            font-size: 1.5rem;
             font-weight: 900;
             color: #ffffff;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             text-align: center;
         }
 
         .pkg-leads span {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #94a3b8;
             font-weight: 400;
             display: block;
@@ -316,20 +319,20 @@
 
         .pkg-pricing {
             background: #0f172a;
-            border-radius: 10px;
-            padding: 0.8rem;
+            border-radius: 8px;
+            padding: 0.7rem;
             text-align: center;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
         }
 
         .pkg-old-price {
             text-decoration: line-through;
             color: #ff4757;
-            font-size: 0.88rem;
+            font-size: 0.82rem;
         }
 
         .pkg-new-price {
-            font-size: 1.9rem;
+            font-size: 1.7rem;
             font-weight: 900;
             color: #00ff88;
         }
@@ -340,69 +343,69 @@
             justify-content: center;
             gap: 8px;
             width: 100%;
-            padding: 0.8rem;
-            border-radius: 10px;
+            padding: 0.75rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 800;
             background: #25D366;
             color: #ffffff;
             text-transform: uppercase;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
         }
 
         footer {
             background: #0f172a;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 3rem 1.5rem 2rem;
+            padding: 2.5rem 1.5rem 1.8rem;
             color: #94a3b8;
-            margin-top: 4rem;
+            margin-top: 3rem;
         }
 
         .footer-content {
             max-width: 1150px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
         }
 
         .footer-col h4 {
             color: #ffffff;
-            font-size: 1.05rem;
-            margin-bottom: 0.9rem;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .footer-col p {
-            font-size: 0.88rem;
-            line-height: 1.6;
-            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 0.4rem;
         }
 
         .footer-col i {
             color: #00ff88;
-            width: 20px;
+            width: 18px;
         }
 
         .footer-bottom {
             max-width: 1150px;
-            margin: 2rem auto 0;
-            padding-top: 1.5rem;
+            margin: 1.8rem auto 0;
+            padding-top: 1.2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .whatsapp-float {
             position: fixed;
-            width: 58px;
-            height: 58px;
-            bottom: 25px;
-            right: 25px;
+            width: 54px;
+            height: 54px;
+            bottom: 20px;
+            right: 20px;
             background: #25D366;
             color: #FFF;
             border-radius: 50%;
             text-align: center;
-            font-size: 28px;
+            font-size: 26px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             z-index: 1000;
             display: flex;
@@ -414,7 +417,7 @@
 </head>
 <body>
 
-    <!-- CANVAS MATRIX ANIMADO -->
+    <!-- CANVAS ANIMADO MATRIX -->
     <canvas id="matrix-canvas"></canvas>
 
     <div class="main-wrapper">
@@ -447,4 +450,20 @@
                     <div class="feature-card">
                         <div class="feature-icon"><i class="fa-solid fa-file-excel"></i></div>
                         <h3>Integración Excel</h3>
-                        <p>Carga directa y procesamiento
+                        <p>Carga directa y procesamiento limpio de listas de prospectos en formato .XLSX y .CSV.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+                        <h3>Módulo Seguro</h3>
+                        <p>Descarga protegida de paquetes ejecutables exclusivamente para clientes autorizados.</p>
+                    </div>
+                </div>
+
+                <!-- MÓDULO DE DESCARGA CON AFICHE LADO A LADO -->
+                <div class="download-wrapper">
+                    <div class="banner-container">
+                        <img src="{{ url_for('static', filename='imagenes/promocion.jpg') }}" alt="Oferta Comercial Leads Goodbotsend" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x800/0f172a/00ff88?text=OFERTA+COMERCIAL+LEADS';">
+                    </div>
+
+                    <div class="download-box">
+                        <h3>
