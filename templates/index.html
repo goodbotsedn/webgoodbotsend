@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goodbotsend | Plataforma Corporativa de Automatización & Leads</title>
+    <title>Goodbotsend | Plataforma Corporativa</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -12,7 +12,6 @@
             --card-inner: #1e293b;
             --primary: #00ff88;
             --secondary: #00d2ff;
-            --accent: #9d4edd;
             --text-main: #ffffff;
             --text-muted: #94a3b8;
             --whatsapp: #25D366;
@@ -31,35 +30,20 @@
             background-color: var(--bg-dark);
             color: var(--text-main);
             min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
+            /* FONDO TECH MATRIX POR CSS PURO (NUNCA FALLA NI SE PONE NEGRO) */
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(0, 255, 136, 0.1) 0%, transparent 60%),
+                linear-gradient(rgba(0, 255, 136, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 136, 0.04) 1px, transparent 1px);
+            background-size: 100% 100%, 35px 35px, 35px 35px;
         }
 
-        /* CANVAS MATRIX TOTALMENTE TRANSPARENTE EN EL FONDO */
-        #matrix-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.25;
-        }
-
-        /* CONTENEDOR PRINCIPAL SIEMPRE VISIBLE POR ENCIMA */
-        .content-wrapper {
-            position: relative;
-            z-index: 10;
-        }
-
-        /* HEADER CORPORATIVO */
         header {
             background: #0f172a;
-            padding: 3rem 1.5rem 2.5rem;
+            padding: 2.5rem 1.5rem 2rem;
             text-align: center;
             border-bottom: 2px solid var(--primary);
-            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
         .brand-badge {
@@ -73,11 +57,11 @@
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .logo-title {
-            font-size: 3.2rem;
+            font-size: 3rem;
             font-weight: 900;
             color: #ffffff;
             letter-spacing: 3px;
@@ -86,9 +70,9 @@
         }
 
         header p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
-            margin-top: 0.8rem;
+            margin-top: 0.6rem;
             max-width: 750px;
             margin-left: auto;
             margin-right: auto;
@@ -101,7 +85,7 @@
         }
 
         .block-section {
-            padding: 3.5rem 0 2rem;
+            padding: 3rem 0 2rem;
             border-bottom: 1px solid var(--border-color);
         }
 
@@ -111,10 +95,9 @@
         }
 
         .section-header h2 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 800;
             color: #ffffff;
-            letter-spacing: 1px;
             margin-bottom: 0.5rem;
         }
 
@@ -123,44 +106,42 @@
             font-size: 1rem;
         }
 
-        /* BLOQUE 1: CARACTERÍSTICAS GOODBOTSEND */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 1.5rem;
-            margin-bottom: 3.5rem;
+            margin-bottom: 3rem;
         }
 
         .feature-card {
             background: var(--card-bg);
-            padding: 2rem 1.5rem;
+            padding: 1.8rem 1.5rem;
             border-radius: 14px;
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 20px rgba(0,0,0,0.4);
         }
 
         .feature-icon {
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .feature-card h3 {
             color: #ffffff;
-            margin-bottom: 0.6rem;
-            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
         }
 
         .feature-card p {
             color: var(--text-muted);
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             line-height: 1.5;
         }
 
-        /* SECCIÓN DE DESCARGA CON AFICHE AL LADO */
         .download-wrapper {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             align-items: center;
             margin: 0 auto;
@@ -176,119 +157,4 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
         }
 
-        .banner-container img {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            display: block;
-            object-fit: cover;
-        }
-
-        .download-box {
-            background: var(--card-inner);
-            border: 2px solid var(--primary);
-            border-radius: 16px;
-            padding: 2.5rem 2rem;
-            text-align: center;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-        }
-
-        .download-box h3 {
-            font-size: 1.5rem;
-            color: #ffffff;
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .download-box h3 i {
-            color: var(--primary);
-        }
-
-        .download-box p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 1rem 1.2rem;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-            background: #0f172a;
-            color: #ffffff;
-            font-size: 1rem;
-            text-align: center;
-            outline: none;
-            margin-bottom: 1.2rem;
-        }
-
-        .input-group input:focus {
-            border-color: var(--primary);
-        }
-
-        .btn-download {
-            width: 100%;
-            padding: 1rem;
-            border-radius: 10px;
-            border: none;
-            background: var(--primary);
-            color: #050811;
-            font-weight: 800;
-            font-size: 1.05rem;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .btn-download:hover {
-            opacity: 0.9;
-        }
-
-        .error-msg {
-            background: rgba(255, 71, 87, 0.2);
-            border: 1px solid var(--danger);
-            color: var(--danger);
-            padding: 0.8rem;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        /* BLOQUE 2: PLANES Y PROSPECCIÓN COMERCIAL */
-        .coverage-bar {
-            background: rgba(0, 210, 255, 0.1);
-            border: 1px solid var(--secondary);
-            border-radius: 12px;
-            padding: 1rem;
-            text-align: center;
-            margin-bottom: 2.5rem;
-            color: var(--secondary);
-            font-weight: 700;
-            font-size: 1rem;
-        }
-
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .pkg-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 2rem 1.5rem;
-            border: 1px solid var(--border-color);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .pkg-card.
+        .banner-container
