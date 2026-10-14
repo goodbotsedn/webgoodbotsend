@@ -20,26 +20,12 @@
             position: relative;
             padding-bottom: 50px;
             overflow-x: hidden;
-        }
-
-        /* FONDO MATRIX ANIMADO EN CSS */
-        .matrix-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.18;
-            background-image: radial-gradient(#00ff88 1px, transparent 0);
-            background-size: 24px 24px;
-            animation: matrixMove 18s linear infinite;
-        }
-
-        @keyframes matrixMove {
-            0% { background-position: 0 0; }
-            100% { background-position: 0 1000px; }
+            /* FONDO MATRIX ANIMADO EN CSS PURO (NUNCA SE CONGELA NI DAÑA EL HTML) */
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(0, 255, 136, 0.1) 0%, transparent 70%),
+                linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 30px 30px, 30px 30px;
         }
 
         .main-wrapper {
@@ -50,7 +36,7 @@
         header {
             background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(8px);
-            padding: 2rem 1.5rem 1.8rem;
+            padding: 2.5rem 1.5rem 2rem;
             text-align: center;
             border-bottom: 2px solid #00ff88;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -71,7 +57,7 @@
         }
 
         .logo-title {
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 900;
             color: #ffffff;
             letter-spacing: 3px;
@@ -95,17 +81,17 @@
         }
 
         .block-section {
-            padding: 2.5rem 0 1.8rem;
+            padding: 3rem 0 2rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.2rem;
         }
 
         .section-header h2 {
-            font-size: 1.9rem;
+            font-size: 2rem;
             font-weight: 800;
             color: #ffffff;
             margin-bottom: 0.4rem;
@@ -113,60 +99,61 @@
 
         .section-header p {
             color: #94a3b8;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.2rem;
-            margin-bottom: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
         }
 
         .feature-card {
-            background: rgba(17, 24, 39, 0.92);
+            background: rgba(17, 24, 39, 0.95);
             backdrop-filter: blur(6px);
-            padding: 1.5rem 1.2rem;
-            border-radius: 12px;
+            padding: 1.8rem 1.4rem;
+            border-radius: 14px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 4px 20px rgba(0,0,0,0.4);
         }
 
         .feature-icon {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: #00ff88;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.8rem;
         }
 
         .feature-card h3 {
             color: #ffffff;
-            margin-bottom: 0.4rem;
-            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
         }
 
         .feature-card p {
             color: #94a3b8;
-            font-size: 0.88rem;
-            line-height: 1.4;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
+        /* DESCARGA + IMAGEN PROMOCIONAL */
         .download-wrapper {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             align-items: center;
             margin: 0 auto;
-            max-width: 1000px;
+            max-width: 1050px;
         }
 
         .banner-container {
             text-align: center;
-            background: rgba(17, 24, 39, 0.92);
-            border-radius: 14px;
-            padding: 0.8rem;
+            background: rgba(17, 24, 39, 0.95);
+            border-radius: 16px;
+            padding: 1rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-            min-height: 250px;
+            min-height: 280px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -174,8 +161,8 @@
 
         .banner-container img {
             width: 100%;
-            max-height: 380px;
-            border-radius: 10px;
+            max-height: 400px;
+            border-radius: 12px;
             display: block;
             object-fit: contain;
             margin: 0 auto;
@@ -184,20 +171,20 @@
         .download-box {
             background: rgba(30, 41, 59, 0.95);
             border: 2px solid #00ff88;
-            border-radius: 14px;
-            padding: 2rem 1.5rem;
+            border-radius: 16px;
+            padding: 2.2rem 1.8rem;
             text-align: center;
             box-shadow: 0 8px 30px rgba(0,0,0,0.5);
         }
 
         .download-box h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: #ffffff;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .download-box h3 i {
@@ -206,21 +193,21 @@
 
         .download-box p {
             color: #94a3b8;
-            font-size: 0.88rem;
-            margin-bottom: 1.2rem;
+            font-size: 0.92rem;
+            margin-bottom: 1.4rem;
         }
 
         .input-group input {
             width: 100%;
-            padding: 0.85rem 1rem;
-            border-radius: 8px;
+            padding: 0.9rem 1.2rem;
+            border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.15);
             background: #0f172a;
             color: #ffffff;
-            font-size: 0.95rem;
+            font-size: 1rem;
             text-align: center;
             outline: none;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .input-group input:focus {
@@ -229,55 +216,55 @@
 
         .btn-download {
             width: 100%;
-            padding: 0.85rem;
-            border-radius: 8px;
+            padding: 0.9rem;
+            border-radius: 10px;
             border: none;
             background: #00ff88;
             color: #050811;
             font-weight: 800;
-            font-size: 0.95rem;
+            font-size: 1rem;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .error-msg {
             background: rgba(255, 71, 87, 0.2);
             border: 1px solid #ff4757;
             color: #ff4757;
-            padding: 0.7rem;
+            padding: 0.8rem;
             border-radius: 8px;
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
         }
 
         .coverage-bar {
             background: rgba(0, 210, 255, 0.1);
             border: 1px solid #00d2ff;
-            border-radius: 10px;
-            padding: 0.8rem;
+            border-radius: 12px;
+            padding: 1rem;
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             color: #00d2ff;
             font-weight: 700;
-            font-size: 0.92rem;
+            font-size: 0.98rem;
         }
 
         .packages-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.2rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
         }
 
         .pkg-card {
-            background: rgba(17, 24, 39, 0.92);
+            background: rgba(17, 24, 39, 0.95);
             backdrop-filter: blur(6px);
-            border-radius: 14px;
-            padding: 1.5rem 1.2rem;
+            border-radius: 16px;
+            padding: 1.8rem 1.4rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
@@ -292,37 +279,37 @@
         .pkg-header {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 0.8rem;
+            gap: 12px;
+            margin-bottom: 1rem;
         }
 
         .pkg-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             background: rgba(255,255,255,0.05);
         }
 
         .pkg-title h3 {
-            font-size: 0.98rem;
+            font-size: 1.05rem;
             color: #ffffff;
             text-transform: uppercase;
         }
 
         .pkg-leads {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             font-weight: 900;
             color: #ffffff;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             text-align: center;
         }
 
         .pkg-leads span {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: #94a3b8;
             font-weight: 400;
             display: block;
@@ -330,20 +317,20 @@
 
         .pkg-pricing {
             background: #0f172a;
-            border-radius: 8px;
-            padding: 0.7rem;
+            border-radius: 10px;
+            padding: 0.8rem;
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
         .pkg-old-price {
             text-decoration: line-through;
             color: #ff4757;
-            font-size: 0.82rem;
+            font-size: 0.88rem;
         }
 
         .pkg-new-price {
-            font-size: 1.7rem;
+            font-size: 1.9rem;
             font-weight: 900;
             color: #00ff88;
         }
@@ -354,69 +341,69 @@
             justify-content: center;
             gap: 8px;
             width: 100%;
-            padding: 0.75rem;
-            border-radius: 8px;
+            padding: 0.8rem;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 800;
             background: #25D366;
             color: #ffffff;
             text-transform: uppercase;
-            font-size: 0.82rem;
+            font-size: 0.85rem;
         }
 
         footer {
             background: #0f172a;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2.5rem 1.5rem 1.8rem;
+            padding: 3rem 1.5rem 2rem;
             color: #94a3b8;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
         .footer-content {
             max-width: 1150px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
         .footer-col h4 {
             color: #ffffff;
-            font-size: 1rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+            margin-bottom: 0.9rem;
         }
 
         .footer-col p {
-            font-size: 0.85rem;
-            line-height: 1.5;
-            margin-bottom: 0.4rem;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
         }
 
         .footer-col i {
             color: #00ff88;
-            width: 18px;
+            width: 20px;
         }
 
         .footer-bottom {
             max-width: 1150px;
-            margin: 1.8rem auto 0;
-            padding-top: 1.2rem;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
         .whatsapp-float {
             position: fixed;
-            width: 54px;
-            height: 54px;
-            bottom: 20px;
-            right: 20px;
+            width: 58px;
+            height: 58px;
+            bottom: 25px;
+            right: 25px;
             background: #25D366;
             color: #FFF;
             border-radius: 50%;
             text-align: center;
-            font-size: 26px;
+            font-size: 28px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             z-index: 1000;
             display: flex;
@@ -427,9 +414,6 @@
     </style>
 </head>
 <body>
-
-    <!-- FONDO MATRIX -->
-    <div class="matrix-bg"></div>
 
     <div class="main-wrapper">
         <header>
@@ -463,4 +447,170 @@
                         <h3>Integración Excel</h3>
                         <p>Carga directa y procesamiento limpio de listas de prospectos en formato .XLSX y .CSV.</p>
                     </div>
-                    <div class
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+                        <h3>Módulo Seguro</h3>
+                        <p>Descarga protegida de paquetes ejecutables exclusivamente para clientes autorizados.</p>
+                    </div>
+                </div>
+
+                <!-- DESCARGA + IMAGEN PROMOCIONAL -->
+                <div class="download-wrapper">
+                    <div class="banner-container">
+                        <img src="{{ url_for('static', filename='imagenes/promocion.jpg') }}" alt="Promoción Goodbotsend" onerror="this.onerror=null; this.src='/static/imagenes/promocion.jpg';">
+                    </div>
+
+                    <div class="download-box">
+                        <h3><i class="fa-solid fa-key"></i> Descarga de Paquetes Ejecutables</h3>
+                        <p>Ingresa tu clave de acceso autorizada para descargar el paquete ejecutable del software.</p>
+                        
+                        {% if error %}
+                            <div class="error-msg"><i class="fa-solid fa-triangle-exclamation"></i> {{ error }}</div>
+                        {% endif %}
+
+                        <form action="/" method="POST">
+                            <div class="input-group">
+                                <input type="password" name="clave" placeholder="Ingresa tu clave de acceso autorizada..." required autocomplete="off">
+                            </div>
+                            <button type="submit" class="btn-download">
+                                <i class="fa-solid fa-download"></i> Validar & Descargar Paquete
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 2: PLANES Y LEADS DE CLIENTES POTENCIALES -->
+            <section class="block-section">
+                <div class="section-header">
+                    <h2>Leads de Clientes Potenciales</h2>
+                    <p>Segmentación comercial idónea para impulsar tus cierres de ventas a nivel nacional.</p>
+                </div>
+
+                <div class="coverage-bar">
+                    <i class="fa-solid fa-earth-americas"></i> Cobertura Comercial Disponible: Leads Calificados a Nivel Nacional (Quito, Guayaquil, Provincias)
+                </div>
+
+                <div class="packages-grid">
+                    
+                    <!-- EMPRENDEDOR -->
+                    <div class="pkg-card blue">
+                        <div>
+                            <div class="pkg-header">
+                                <div class="pkg-icon" style="color:#00d2ff"><i class="fa-solid fa-briefcase"></i></div>
+                                <div class="pkg-title">
+                                    <h3>Paquete Emprendedor</h3>
+                                </div>
+                            </div>
+                            <div class="pkg-leads">
+                                4.500 <span>LEADS POTENCIALES</span>
+                            </div>
+                            <div class="pkg-pricing">
+                                <div class="pkg-old-price">Antes: $40.00</div>
+                                <div class="pkg-new-price">$19.99</div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/593963218544?text=Hola%20Mijail,%20deseo%20comprar%20el%20Paquete%20Emprendedor%20(4.500%20Leads%20x%20$19.99)" class="btn-pkg" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Adquirir Paquete
+                        </a>
+                    </div>
+
+                    <!-- CIERRE EXPLOSIVO -->
+                    <div class="pkg-card teal">
+                        <div>
+                            <div class="pkg-header">
+                                <div class="pkg-icon" style="color:#00ffc8"><i class="fa-solid fa-bolt"></i></div>
+                                <div class="pkg-title">
+                                    <h3>Cierre Explosivo</h3>
+                                </div>
+                            </div>
+                            <div class="pkg-leads">
+                                15.000 <span>LEADS POTENCIALES</span>
+                            </div>
+                            <div class="pkg-pricing">
+                                <div class="pkg-old-price">Antes: $60.00</div>
+                                <div class="pkg-new-price">$34.99</div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/593963218544?text=Hola%20Mijail,%20deseo%20comprar%20el%20Paquete%20Cierre%20Explosivo%20(15.000%20Leads%20x%20$34.99)" class="btn-pkg" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Adquirir Paquete
+                        </a>
+                    </div>
+
+                    <!-- CORPORATIVO -->
+                    <div class="pkg-card purple">
+                        <div>
+                            <div class="pkg-header">
+                                <div class="pkg-icon" style="color:#9d4edd"><i class="fa-solid fa-city"></i></div>
+                                <div class="pkg-title">
+                                    <h3>Paquete Corporativo</h3>
+                                </div>
+                            </div>
+                            <div class="pkg-leads">
+                                50.000 <span>LEADS POTENCIALES</span>
+                            </div>
+                            <div class="pkg-pricing">
+                                <div class="pkg-old-price">Antes: $120.00</div>
+                                <div class="pkg-new-price">$49.99</div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/593963218544?text=Hola%20Mijail,%20deseo%20comprar%20el%20Paquete%20Corporativo%20(50.000%20Leads%20x%20$49.99)" class="btn-pkg" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Adquirir Paquete
+                        </a>
+                    </div>
+
+                    <!-- LOTE COMPLETO -->
+                    <div class="pkg-card green">
+                        <div>
+                            <div class="pkg-header">
+                                <div class="pkg-icon" style="color:#00ff88"><i class="fa-solid fa-globe"></i></div>
+                                <div class="pkg-title">
+                                    <h3>Lote Completo</h3>
+                                </div>
+                            </div>
+                            <div class="pkg-leads">
+                                100.000 <span>HASTA 100K LEADS</span>
+                            </div>
+                            <div class="pkg-pricing">
+                                <div class="pkg-old-price">Antes: $180.00</div>
+                                <div class="pkg-new-price">$79.99</div>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/593963218544?text=Hola%20Mijail,%20deseo%20comprar%20el%20Lote%20Completo%20(100.000%20Leads%20x%20$79.99)" class="btn-pkg" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Adquirir Paquete
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+
+        <!-- PIE FISCAL -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Identificación Fiscal & Empresa</h4>
+                    <p><i class="fa-solid fa-user-tie"></i> <strong>Titular:</strong> Mijail Jimenez Herrera</p>
+                    <p><i class="fa-solid fa-id-card"></i> <strong>RUC:</strong> 1722975453001</p>
+                    <p><i class="fa-solid fa-building"></i> <strong>Actividad:</strong> Automatización de Software & Servicios Comercial B2B/B2C</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Atención Corporativa & Contacto</h4>
+                    <p><i class="fa-solid fa-phone"></i> <strong>WhatsApp Directo:</strong> 0963218544</p>
+                    <p><i class="fa-solid fa-earth-americas"></i> <strong>Cobertura:</strong> Ecuador (Nacional)</p>
+                    <p><i class="fa-solid fa-clock"></i> <strong>Procesamiento:</strong> Entrega inmediata tras confirmación</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Goodbotsend | Propietario: Mijail Jimenez Herrera - RUC 1722975453001. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+        <a href="https://wa.me/593963218544?text=Hola%20Mijail,%20requiero%20asistencia%20con%20Goodbotsend" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+</body>
+</html>
