@@ -7,16 +7,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg-color: #0b0f19;
+            --bg-dark: #070a12;
             --card-bg: #111827;
+            --card-inner: #1e293b;
             --primary: #00ff88;
             --secondary: #00d2ff;
             --accent: #9d4edd;
-            --text: #f8fafc;
-            --text-dim: #94a3b8;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
             --whatsapp: #25D366;
             --danger: #ff4757;
-            --border: rgba(255, 255, 255, 0.12);
+            --border-color: rgba(255, 255, 255, 0.12);
         }
 
         * {
@@ -27,36 +28,24 @@
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             min-height: 100vh;
-            position: relative;
-        }
-
-        /* FONDO MATRIX EN CAPA TRASERA FIJA */
-        #matrix-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.15;
-            pointer-events: none;
-        }
-
-        .content-wrapper {
-            position: relative;
-            z-index: 1;
+            /* Fondo Grid estilo Matrix / Tech por CSS puro */
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(0, 255, 136, 0.08) 0%, transparent 60%),
+                linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+            background-size: 100% 100%, 30px 30px, 30px 30px;
         }
 
         /* HEADER CORPORATIVO */
         header {
-            background: #0f172a;
+            background: rgba(15, 23, 42, 0.95);
             padding: 3rem 1.5rem 2.5rem;
             text-align: center;
             border-bottom: 2px solid var(--primary);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
         }
 
         .brand-badge {
@@ -79,12 +68,12 @@
             color: #ffffff;
             letter-spacing: 3px;
             text-transform: uppercase;
-            text-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
         }
 
         header p {
             font-size: 1.15rem;
-            color: var(--text-dim);
+            color: var(--text-muted);
             margin-top: 0.8rem;
             max-width: 750px;
             margin-left: auto;
@@ -99,7 +88,7 @@
 
         .block-section {
             padding: 3.5rem 0 2rem;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .section-header {
@@ -116,11 +105,11 @@
         }
 
         .section-header p {
-            color: var(--text-dim);
+            color: var(--text-muted);
             font-size: 1rem;
         }
 
-        /* FEATURES GRID */
+        /* BLOQUE 1: CARACTERÍSTICAS GODBOTSEND */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -132,7 +121,7 @@
             background: var(--card-bg);
             padding: 2rem 1.5rem;
             border-radius: 14px;
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-color);
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
@@ -149,14 +138,14 @@
         }
 
         .feature-card p {
-            color: var(--text-dim);
+            color: var(--text-muted);
             font-size: 0.92rem;
             line-height: 1.5;
         }
 
-        /* MÓDULO DE DESCARGA */
+        /* MÓDULO DE DESCARGA CON CONTRASEÑA */
         .download-box {
-            background: #1e293b;
+            background: var(--card-inner);
             border: 2px solid var(--primary);
             border-radius: 16px;
             padding: 2.5rem 2rem;
@@ -181,7 +170,7 @@
         }
 
         .download-box p {
-            color: var(--text-dim);
+            color: var(--text-muted);
             font-size: 0.95rem;
             margin-bottom: 1.5rem;
         }
@@ -190,7 +179,7 @@
             width: 100%;
             padding: 1rem 1.2rem;
             border-radius: 10px;
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-color);
             background: #0f172a;
             color: #ffffff;
             font-size: 1rem;
@@ -235,7 +224,7 @@
             margin-bottom: 1rem;
         }
 
-        /* PAQUETES DE LEADS */
+        /* BLOQUE 2: PROSPECCIÓN & LEADS */
         .coverage-bar {
             background: rgba(0, 210, 255, 0.1);
             border: 1px solid var(--secondary);
@@ -258,7 +247,7 @@
             background: var(--card-bg);
             border-radius: 16px;
             padding: 2rem 1.5rem;
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -302,4 +291,173 @@
         }
 
         .pkg-leads span {
-            font-size: 0.8
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            display: block;
+        }
+
+        .pkg-pricing {
+            background: #0f172a;
+            border-radius: 10px;
+            padding: 0.9rem;
+            text-align: center;
+            margin-bottom: 1.2rem;
+        }
+
+        .pkg-old-price {
+            text-decoration: line-through;
+            color: var(--danger);
+            font-size: 0.9rem;
+        }
+
+        .pkg-new-price {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .btn-pkg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 0.85rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            background: var(--whatsapp);
+            color: #ffffff;
+            text-transform: uppercase;
+            font-size: 0.88rem;
+        }
+
+        /* FOOTER / DATOS EMPRESA */
+        footer {
+            background: #0f172a;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 1.5rem 2rem;
+            color: var(--text-muted);
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1150px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col i {
+            color: var(--primary);
+            width: 20px;
+        }
+
+        .footer-bottom {
+            max-width: 1150px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background: var(--whatsapp);
+            color: #FFF;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand-badge"><i class="fa-solid fa-shield-halved"></i> Plataforma Oficial B2B / B2C</div>
+        <div class="logo-title">GODBOTSEND</div>
+        <p>Ecosistema Integral de Automatización de Comunicaciones Corporativas & Prospección Comercial.</p>
+    </header>
+
+    <div class="container">
+
+        <!-- BLOQUE 1: GOODBOTSEND Y APLICATIVO -->
+        <section class="block-section">
+            <div class="section-header">
+                <h2>Plataforma de Automatización GOODBOTSEND</h2>
+                <p>Optimiza la comunicación comercial de tu empresa con flujos automatizados y ejecuciones masivas.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-paper-plane"></i></div>
+                    <h3>Envíos Masivos Estables</h3>
+                    <p>Difusión masiva de catálogos, imágenes, PDF y textos con alta tasa de entregabilidad.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-robot"></i></div>
+                    <h3>Flujos Automatizados</h3>
+                    <p>Atención oportuna a clientes potenciales reduciendo tiempos de respuesta al mínimo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-file-excel"></i></div>
+                    <h3>Integración Excel</h3>
+                    <p>Carga directa y procesamiento limpio de listas de prospectos en formato .XLSX y .CSV.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-lock"></i></div>
+                    <h3>Módulo Seguro</h3>
+                    <p>Descarga protegida de paquetes ejecutables exclusivamente para clientes autorizados.</p>
+                </div>
+            </div>
+
+            <!-- ACCESO A DESCARGA MÓDULO -->
+            <div class="download-box">
+                <h3><i class="fa-solid fa-key"></i> Descarga de Paquetes Ejecutables</h3>
+                <p>Ingresa la clave de acceso corporativa asignada para iniciar la descarga del paquete oficial.</p>
+                
+                {% if error %}
+                    <div class="error-msg"><i class="fa-solid fa-triangle-exclamation"></i> {{ error }}</div>
+                {% endif %}
+
+                <form action="/" method="POST">
+                    <div class="input-group">
+                        <input type="password" name="clave" placeholder="Ingresa tu clave de acceso autorizada..." required autocomplete="off">
+                    </div>
+                    <button type="submit" class="btn-download">
+                        <i class="fa-solid fa-download"></i> Validar & Descargar Paquete
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- BLOQUE 2: PROSPECCIÓN COMERCIAL & LEADS -->
+        <section class="block-section">
+            <div class="section-header">
+                <h2>Leads de Clientes Potenciales</h2>
+                <p>Segmentación comercial id
