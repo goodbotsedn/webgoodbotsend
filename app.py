@@ -1,46 +1,23 @@
-import streamlit as st
-import zipfile
-import io
+from flask import Flask, render_template, request, send_from_directory
 import os
 
-# Configuración básica
-st.set_page_config(page_title="Descarga", layout="centered")
+app = Flask(__name__)
 
-st.title("GOOD BOT SEND")
+# Configura aquí la clave secreta con la que tus clientes descargan los archivos
+CLAVE_ACCESSO = "1234" # Cambia esto por la clave que usas actualmente
 
-# --- CORRECCIÓN DE IMAGEN ---
-# Verificamos si existe la imagen en la ruta que usamos anteriormente
-ruta_imagen = "static/imagenes/promocion.jpg"
-if os.path.exists(ruta_imagen):
-    st.image(ruta_imagen, use_container_width=True)
-else:
-    st.warning(f"La imagen no se encontró en: {ruta_imagen}. Verifica si está ahí o si el nombre es diferente.")
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    error = None
+    if request.method == 'POST':
+        ingreso = request.form.get('clave')
+        if ingreso == CLAVE_ACCESSO:
+            # Si la clave es correcta, descarga el archivo de clientes o muestra el panel de descarga
+            return send_from_directory(directory='.', path='clientes.xlsx', as_attachment=True)
+        else:
+            error = "Clave incorrecta. Inténtalo de nuevo."
+            
+    return render_template('index.html', error=error)
 
-# Lógica de creación de ZIP
-def crear_zip():
-    zip_buffer = io.BytesIO()
-    with zipfile.ZipFile(zip_buffer, "w") as zf:
-        archivos = [
-            "clientes.xlsx", "envio_imagen.py", "envio_masivo.py", "foto.jpg", 
-            "MANUAL DE INSTALACIÓN Y CONFIGURACIÓN DESDE CERO.pdf", 
-            "ARRANCAR_BOT.bat", "ARRANCAR_BOT_IMAGEN.bat"
-        ]
-        for archivo in archivos:
-            if os.path.exists(archivo):
-                zf.write(archivo)
-    return zip_buffer.getvalue()
-
-# Entrada de clave
-clave = st.text_input("Ingresa la clave:", type="password")
-
-# Validación
-if clave == "Modulo10":
-    st.success("Acceso concedido")
-    st.download_button(
-        label="DESCARGAR ARCHIVOS",
-        data=crear_zip(),
-        file_name="GoodBotSend.zip",
-        mime="application/zip"
-    )
-elif clave != "":
-    st.error("Clave incorrecta")
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
