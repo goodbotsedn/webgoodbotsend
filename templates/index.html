@@ -22,7 +22,7 @@
             overflow-x: hidden;
         }
 
-        /* FONDO MATRIX ANIMADO POR CSS (SIN JAVASCRIPT - 100% GARANTIZADO QUE NO SE PONE NEGRO) */
+        /* FONDO MATRIX ANIMADO EN CSS PURO (NUNCA FALLA NI BLOQUEA FLASK) */
         .matrix-bg {
             position: fixed;
             top: 0;
@@ -31,10 +31,10 @@
             height: 100vh;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.15;
+            opacity: 0.18;
             background-image: radial-gradient(#00ff88 1px, transparent 0);
             background-size: 24px 24px;
-            animation: matrixMove 20s linear infinite;
+            animation: matrixMove 18s linear infinite;
         }
 
         @keyframes matrixMove {
@@ -150,7 +150,7 @@
             line-height: 1.4;
         }
 
-        /* SECCIÓN DE DESCARGA JUNTO A LA IMAGEN PROMOCIONAL */
+        /* SECCIÓN DESCARGA + IMAGEN PROMOCIONAL */
         .download-wrapper {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -274,3 +274,152 @@
             background: rgba(17, 24, 39, 0.92);
             backdrop-filter: blur(6px);
             border-radius: 14px;
+            padding: 1.5rem 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pkg-card.blue { border-top: 4px solid #00d2ff; }
+        .pkg-card.teal { border-top: 4px solid #00ffc8; }
+        .pkg-card.purple { border-top: 4px solid #9d4edd; }
+        .pkg-card.green { border-top: 4px solid #00ff88; }
+
+        .pkg-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.8rem;
+        }
+
+        .pkg-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .pkg-title h3 {
+            font-size: 0.98rem;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .pkg-leads {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 0.8rem;
+            text-align: center;
+        }
+
+        .pkg-leads span {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            font-weight: 400;
+            display: block;
+        }
+
+        .pkg-pricing {
+            background: #0f172a;
+            border-radius: 8px;
+            padding: 0.7rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .pkg-old-price {
+            text-decoration: line-through;
+            color: #ff4757;
+            font-size: 0.82rem;
+        }
+
+        .pkg-new-price {
+            font-size: 1.7rem;
+            font-weight: 900;
+            color: #00ff88;
+        }
+
+        .btn-pkg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 800;
+            background: #25D366;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-size: 0.82rem;
+        }
+
+        footer {
+            background: #0f172a;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2.5rem 1.5rem 1.8rem;
+            color: #94a3b8;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1150px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col p {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-col i {
+            color: #00ff88;
+            width: 18px;
+        }
+
+        .footer-bottom {
+            max-width: 1150px;
+            margin: 1.8rem auto 0;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 54px;
+            height: 54px;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: #FFF;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 26px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+    </style>
+</head>
