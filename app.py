@@ -1,33 +1,50 @@
-from flask import Flask, render_template, request, send_file, flash
+from flask import Flask, render_template, request, send_file
 import os
+import zipfile
 
 app = Flask(__name__)
-app.secret_key = 'godbotsend_secret_key_2026'
 
-# Define aquí la clave para tus clientes
-CLAVE_ACCESO = "1234"  # Cambia esta clave por la que entregas a tus clientes
+# Clave de acceso exacta
+CLAVE_ACCESO = "Modulo.10"
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
+    error = None
     if request.method == 'POST':
         clave_ingresada = request.form.get('clave', '').strip()
         
         if clave_ingresada == CLAVE_ACCESO:
-            # Archivo objetivo a descargar (debe estar en la raíz de tu proyecto)
-            archivo_path = 'clientes.xlsx'
+            zip_filename = 'GODBOTSEND_PAQUETE_COMPLETO.zip'
             
-            if os.path.exists(archivo_path):
+            # Lista exacta de archivos del bot a empaquetar para el cliente
+            archivos_a_incluir = [
+                'ARRANCAR_BOT.bat',
+                'ARRANCAR_BOT_IMAGEN.bat',
+                'envio_masivo.py',
+                'envio_imagen.py',
+                'clientes.xlsx',
+                'foto.jpg',
+                'MANUAL DE INSTALACIÓN Y USO.txt'
+            ]
+            
+            # Crea el archivo ZIP incluyendo solo los archivos existentes
+            with zipfile.ZipFile(zip_filename, 'w', zipfile.ZIP_DEFLATED) as zipf:
+                for archivo in archivos_a_incluir:
+                    if os.path.exists(archivo):
+                        zipf.write(archivo)
+            
+            if os.path.exists(zip_filename):
                 return send_file(
-                    archivo_path,
+                    zip_filename,
                     as_attachment=True,
-                    download_name='clientes.xlsx'
+                    download_name='GODBOTSEND_PAQUETE_COMPLETO.zip'
                 )
             else:
-                return render_template('index.html', error="El archivo no se encuentra disponible en el servidor.")
+                error = "No se pudieron encontrar los archivos en el servidor."
         else:
-            return render_template('index.html', error="Clave incorrecta. Por favor, verifica e intenta nuevamente.")
+            error = "Clave incorrecta. Por favor, verifica e intenta nuevamente."
             
-    return render_template('index.html')
+    return render_template('index.html', error=error)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
