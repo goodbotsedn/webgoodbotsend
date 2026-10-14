@@ -31,7 +31,6 @@
             background-color: var(--bg-dark);
             color: var(--text-main);
             min-height: 100vh;
-            /* Fondo Grid estilo Matrix / Tech por CSS puro */
             background-image: 
                 radial-gradient(circle at 50% 0%, rgba(0, 255, 136, 0.08) 0%, transparent 60%),
                 linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
@@ -39,7 +38,7 @@
             background-size: 100% 100%, 30px 30px, 30px 30px;
         }
 
-        /* HEADER CORPORATIVO */
+        /* HEADER */
         header {
             background: rgba(15, 23, 42, 0.95);
             padding: 3rem 1.5rem 2.5rem;
@@ -109,7 +108,7 @@
             font-size: 1rem;
         }
 
-        /* BLOQUE 1: CARACTERÍSTICAS GODBOTSEND */
+        /* BLOQUE 1: GOODBOTSEND */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -143,7 +142,7 @@
             line-height: 1.5;
         }
 
-        /* MÓDULO DE DESCARGA CON CONTRASEÑA */
+        /* MÓDULO DE DESCARGA CON CLAVE Modulo.10 */
         .download-box {
             background: var(--card-inner);
             border: 2px solid var(--primary);
@@ -224,7 +223,7 @@
             margin-bottom: 1rem;
         }
 
-        /* BLOQUE 2: PROSPECCIÓN & LEADS */
+        /* BLOQUE 2: PAQUETES DE LEADS Y PROSPECCIÓN */
         .coverage-bar {
             background: rgba(0, 210, 255, 0.1);
             border: 1px solid var(--secondary);
@@ -333,7 +332,11 @@
             font-size: 0.88rem;
         }
 
-        /* FOOTER / DATOS EMPRESA */
+        .btn-pkg:hover {
+            opacity: 0.9;
+        }
+
+        /* FOOTER */
         footer {
             background: #0f172a;
             border-top: 1px solid var(--border-color);
@@ -398,15 +401,16 @@
 </head>
 <body>
 
+    <!-- HEADER CORPORATIVO -->
     <header>
         <div class="brand-badge"><i class="fa-solid fa-shield-halved"></i> Plataforma Oficial B2B / B2C</div>
         <div class="logo-title">GODBOTSEND</div>
-        <p>Ecosistema Integral de Automatización de Comunicaciones Corporativas & Prospección Comercial.</p>
+        <p>Ecosistema de Automatización de Comunicaciones Corporativas & Prospección Comercial de Alto Impacto.</p>
     </header>
 
     <div class="container">
 
-        <!-- BLOQUE 1: GOODBOTSEND Y APLICATIVO -->
+        <!-- BLOQUE 1: GOODBOTSEND & MÓDULO DE DESCARGA -->
         <section class="block-section">
             <div class="section-header">
                 <h2>Plataforma de Automatización GOODBOTSEND</h2>
@@ -436,10 +440,10 @@
                 </div>
             </div>
 
-            <!-- ACCESO A DESCARGA MÓDULO -->
+            <!-- CAJA DE DESCARGA DE ARCHIVOS -->
             <div class="download-box">
                 <h3><i class="fa-solid fa-key"></i> Descarga de Paquetes Ejecutables</h3>
-                <p>Ingresa la clave de acceso corporativa asignada para iniciar la descarga del paquete oficial.</p>
+                <p>Ingresa tu clave de acceso autorizada para descargar el paquete ejecutable del software.</p>
                 
                 {% if error %}
                     <div class="error-msg"><i class="fa-solid fa-triangle-exclamation"></i> {{ error }}</div>
@@ -447,7 +451,7 @@
 
                 <form action="/" method="POST">
                     <div class="input-group">
-                        <input type="password" name="clave" placeholder="Ingresa tu clave de acceso autorizada..." required autocomplete="off">
+                        <input type="password" name="clave" placeholder="Ingresa tu clave de acceso..." required autocomplete="off">
                     </div>
                     <button type="submit" class="btn-download">
                         <i class="fa-solid fa-download"></i> Validar & Descargar Paquete
@@ -456,8 +460,100 @@
             </div>
         </section>
 
-        <!-- BLOQUE 2: PROSPECCIÓN COMERCIAL & LEADS -->
+        <!-- BLOQUE 2: PLANES Y PROSPECCIÓN COMERCIAL (DEL AFICHE) -->
         <section class="block-section">
             <div class="section-header">
                 <h2>Leads de Clientes Potenciales</h2>
-                <p>Segmentación comercial id
+                <p>Segmentación comercial idónea para impulsar tus cierres de ventas a nivel nacional.</p>
+            </div>
+
+            <div class="coverage-bar">
+                <i class="fa-solid fa-earth-americas"></i> Cobertura Comercial Disponible: Leads Calificados a Nivel Nacional (Quito, Guayaquil, Provincias)
+            </div>
+
+            <div class="packages-grid">
+                
+                <!-- PAQUETE EMPRENDEDOR -->
+                <div class="pkg-card blue">
+                    <div>
+                        <div class="pkg-header">
+                            <div class="pkg-icon" style="color:#00d2ff"><i class="fa-solid fa-briefcase"></i></div>
+                            <div class="pkg-title">
+                                <h3>Paquete Emprendedor</h3>
+                            </div>
+                        </div>
+                        <div class="pkg-leads">
+                            4.500 <span>LEADS POTENCIALES</span>
+                        </div>
+                        <div class="pkg-pricing">
+                            <div class="pkg-old-price">Antes: $40.00</div>
+                            <div class="pkg-new-price">$19.99</div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/593963218544?text=Hola%20Mijail,%20deseo%20comprar%20el%20Paquete%20Emprendedor%20(4.500%20Leads%20x%20$19.99)" class="btn-pkg" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Adquirir Paquete
+                    </a>
+                </div>
+
+                <!-- PAQUETE CIERRE EXPLOSIVO -->
+                <div class="pkg-card teal">
+                    <div>
+                        <div class="pkg-header">
+                            <div class="pkg-icon" style="color:#00ffc8"><i class="fa-solid fa-bolt"></i></div>
+                            <div class="pkg-title">
+                                <h3>Cierre Explosivo</h3>
+                            </div>
+                        </div>
+                        <div class="pkg-leads">
+                            15.000 <span>LEADS POTENCIALES</span>
+                        </div>
+                        <div class="pkg-pricing">
+                            <div class="pkg-old-price">Antes: $60.00</div>
+                            <div class="pkg-new-price">$34.99</div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/593963218544?text=Hola%20Mijail,%20deseo%20comprar%20el%20Paquete%20Cierre%20Explosivo%20(15.000%20Leads%20x%20$34.99)" class="btn-pkg" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Adquirir Paquete
+                    </a>
+                </div>
+
+                <!-- PAQUETE CORPORATIVO -->
+                <div class="pkg-card purple">
+                    <div>
+                        <div class="pkg-header">
+                            <div class="pkg-icon" style="color:#9d4edd"><i class="fa-solid fa-city"></i></div>
+                            <div class="pkg-title">
+                                <h3>Paquete Corporativo</h3>
+                            </div>
+                        </div>
+                        <div class="pkg-leads">
+                            50.000 <span>LEADS POTENCIALES</span>
+                        </div>
+                        <div class="pkg-pricing">
+                            <div class="pkg-old-price">Antes: $120.00</div>
+                            <div class="pkg-new-price">$49.99</div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/593963218544?text=Hola%20Mijail,%20deseo%20comprar%20el%20Paquete%20Corporativo%20(50.000%20Leads%20x%20$49.99)" class="btn-pkg" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Adquirir Paquete
+                    </a>
+                </div>
+
+                <!-- LOTE COMPLETO -->
+                <div class="pkg-card green">
+                    <div>
+                        <div class="pkg-header">
+                            <div class="pkg-icon" style="color:#00ff88"><i class="fa-solid fa-globe"></i></div>
+                            <div class="pkg-title">
+                                <h3>Lote Completo</h3>
+                            </div>
+                        </div>
+                        <div class="pkg-leads">
+                            100.000 <span>HASTA 100K LEADS</span>
+                        </div>
+                        <div class="pkg-pricing">
+                            <div class="pkg-old-price">Antes: $180.00</div>
+                            <div class="pkg-new-price">$79.99</div>
+                        </div>
+                    </div>
+                    <a href="
