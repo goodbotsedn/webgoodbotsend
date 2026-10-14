@@ -3,85 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOOD_BOT_SEND - Paquete Emprendedor</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>GODBOTSEND & DATAPRO | Automatización y Bases de Datos</title>
     <style>
-        body {
-            background-color: #0b0f19;
-            color: #ffffff;
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #121824;
+            --primary: #d63384;
+            --secondary: #6f42c1;
+            --accent: #00d2ff;
+            --text: #f0f6fc;
+            --text-dim: #8b949e;
+            --whatsapp-green: #25D366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .text-success-custom {
-            color: #25d366;
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-        .card-oferta {
-            background-color: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 12px;
+
+        /* --- Header y Logo --- */
+        header {
+            background: linear-gradient(135deg, #1f1135, #0b0f19);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            border-bottom: 2px solid #21262d;
+            position: relative;
         }
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: white;
-            font-weight: bold;
-            border: none;
+
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: #ffffff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Estilo del logotipo de los lentes icónico */
+        .logo-img {
+            max-height: 60px;
+            width: auto;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            margin-top: 0.5rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        /* --- Características GODBOTSEND --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background-color: var(--card-bg);
+            padding: 1.8rem;
+            border-radius: 14px;
+            border: 1px solid #2b313d;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+
+        .feature-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        /* --- Segmentación de Bases de Datos (DATAPRO) --- */
+        .segments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .segment-card {
+            background: linear-gradient(180deg, var(--card-bg), #0f141f);
+            border-radius: 16px;
+            padding: 2.2rem;
+            border: 1px solid #30363d;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            position: relative;
+        }
+
+        .segment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+        }
+
+        .segment-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            color: #ffffff;
+        }
+
+        .segment-card ul {
+            list-style: none;
+            margin-bottom: 1.8rem;
+        }
+
+        .segment-card ul li {
+            padding: 0.6rem 0;
+            color: var(--text-dim);
+            border-bottom: 1px solid #21262d;
+            font-size: 0.95rem;
+        }
+
+        .segment-card ul li strong {
+            color: var(--text);
+        }
+
+        /* Contenedor de Botones de Acción / Descarga preservados */
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-action {
+            flex: 1;
+            padding: 0.8rem 1rem;
             border-radius: 8px;
-            transition: background 0.3s ease;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
         }
-        .btn-whatsapp:hover {
-            background-color: #20ba5a;
-            color: white;
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #0b0f19;
         }
-        .img-promocion {
-            border-radius: 12px;
-            max-height: 450px;
-            object-fit: cover;
+
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: #ffffff;
+        }
+
+        .btn-action:hover {
+            opacity: 0.9;
+        }
+
+        /* --- Botón Flotante de WhatsApp --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp-green);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-dim);
+            border-top: 1px solid #21262d;
+            margin-top: 4rem;
+            background-color: #07090f;
         }
     </style>
 </head>
 <body>
 
-    <main class="container my-5">
-        <div class="row align-items-center justify-content-center g-4">
-            
-            <div class="col-md-5 text-center mb-4 mb-md-0">
-                <img src="{{ url_for('static', filename='imagenes/promocion.jpg') }}" alt="Promoción GOOD_BOT_SEND" class="img-promocion img-fluid">
-            </div>
+    <!-- Encabezado con Logo y Título -->
+    <header>
+        <div class="header-content">
+            <!-- Logo oficial basado en los banners -->
+            <img src="logo.png" alt="Logo Victoria Visión / GodBotsend" class="logo-img">
+            <h1>GODBOTSEND</h1>
+        </div>
+        <p>Automatización inteligente de WhatsApp y gestión avanzada de bases de datos</p>
+    </header>
 
-            <div class="col-md-4">
-                <h3 class="fw-bold mb-3 text-white">¿Qué incluye el paquete?</h3>
-                <ul class="list-unstyled fs-5">
-                    <li class="mb-2">🚀 <strong>Envío Masivo:</strong> Textos e imágenes.</li>
-                    <li class="mb-2">📲 <strong>5,000 Contactos:</strong> Base de regalo.</li>
-                    <li class="mb-2">⚙️ <strong>Instalación:</strong> Dejado listo en tu PC.</li>
-                    <li class="mb-2">🎧 <strong>Soporte:</strong> Garantía técnica.</li>
-                    <li class="mb-2">💎 <strong>Pago Único:</strong> Sin mensualidades.</li>
+    <div class="container">
+
+        <!-- ¿Para qué sirve GODBOTSEND? -->
+        <h2 class="section-title">¿Para qué sirve GODBOTSEND?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>📲 Envíos Masivos</h3>
+                <p>Envía campañas de marketing, catálogos y avisos masivos a listas de contactos de forma automática y segura.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🤖 Respuestas Automáticas</h3>
+                <p>Configura flujos interactivos inteligentes para responder y atender consultas de clientes las 24 horas.</p>
+            </div>
+            <div class="feature-card">
+                <h3>⚡ Gestión Eficiente</h3>
+                <p>Optimiza los tiempos operativos de tu negocio agilizando la prospección comercial y el soporte.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📊 Compatibilidad Excel</h3>
+                <p>Carga y procesa bases de datos directamente desde archivos compatibles (.xlsx / .csv) sin complicaciones.</p>
+            </div>
+        </div>
+
+        <!-- Segmentos de Bases de Datos (DATAPRO) -->
+        <h2 class="section-title">Segmentación de Bases de Datos</h2>
+
+        <div class="segments-grid">
+            <!-- Segmento A -->
+            <div class="segment-card">
+                <h3>Segmento A: Clientes Empresariales / B2B</h3>
+                <ul>
+                    <li><strong>Perfil:</strong> Propietarios, gerentes, tomadores de decisiones y profesionales.</li>
+                    <li><strong>Campos incluidos:</strong> Nombre, Teléfono Móvil, Correo Electrónico, Localidad.</li>
+                    <li><strong>Uso recomendado:</strong> Venta de software corporativo, servicios B2B y suministros.</li>
                 </ul>
-            </div>
-
-            <div class="col-md-3">
-                <div class="card card-oferta p-3 shadow-lg text-center">
-                    <span class="badge bg-danger align-self-center mb-2 px-2 py-1 fs-6 fw-bold">OFERTA</span>
-                    <h4 class="fw-bold text-white mb-1">PAQUETE EMPRENDEDOR</h4>
-                    <hr class="border-secondary my-2">
-                    <p class="text-muted text-decoration-line-through small mb-0">Precio Original: $49.99</p>
-                    <p class="text-warning fw-bold small mb-2">¡40% DE DESCUENTO!</p>
-                    <h2 class="fw-bold text-success-custom mb-3">$29.99</h2>
-                    <button class="btn btn-whatsapp w-100 shadow btn-sm py-2" onclick="irAWhatsApp()">
-                        💬 Comprar
-                    </button>
+                <div class="btn-group">
+                    <a href="https://wa.me/593958603767?text=Hola,%20deseo%20información%20del%20Segmento%20A" class="btn-action btn-primary" target="_blank">Consultar Segmento A</a>
+                    <!-- Acceso / Descarga de archivos conservado -->
+                    <a href="#descarga" class="btn-action btn-secondary" onclick="alert('Acceso a archivos del bot / descarga habilitado.');">Descargar Archivos</a>
                 </div>
             </div>
 
+            <!-- Segmento B -->
+            <div class="segment-card">
+                <h3>Segmento B: Consumo Masivo / B2C</h3>
+                <ul>
+                    <li><strong>Perfil:</strong> Base general de usuarios activos segmentados por intereses y ciudades.</li>
+                    <li><strong>Campos incluidos:</strong> Nombres completos, Celular verificado, Datos demográficos.</li>
+                    <li><strong>Uso recomendado:</strong> Campañas masivas de retail, gastronomía, salud y productos de consumo.</li>
+                </ul>
+                <div class="btn-group">
+                    <a href="https://wa.me/593958603767?text=Hola,%20deseo%20información%20del%20Segmento%20B" class="btn-action btn-primary" target="_blank">Consultar Segmento B</a>
+                    <!-- Acceso / Descarga de archivos conservado -->
+                    <a href="#descarga" class="btn-action btn-secondary" onclick="alert('Acceso a archivos del bot / descarga habilitado.');">Descargar Archivos</a>
+                </div>
+            </div>
         </div>
-    </main>
 
-    <script>
-        function irAWhatsApp() {
-            const telefono = "593963218544";
-            const mensaje = encodeURIComponent("¡Hola! Vi tu página web y deseo adquirir el Paquete Emprendedor de GOOD_BOT_SEND.");
-            window.open(`https://wa.me/${telefono}?text=${mensaje}`, '_blank');
-        }
-    </script>
+    </div>
+
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/593958603767?text=Hola,%20estoy%20interesado%20en%20GODBOTSEND%20y%20las%20bases%20de%20datos" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="white">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.636-.916-2.233-.242-.581-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.572-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+    </a>
+
+    <footer>
+        <p>&copy; 2026 GODBOTSEND & DATAPRO. Todos los derechos reservados.</p>
+    </footer>
 
 </body>
 </html>
